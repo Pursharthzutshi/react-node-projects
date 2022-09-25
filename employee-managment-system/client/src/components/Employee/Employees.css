@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: "Montserrat";
+}
+
+.data-send-div-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-send-div{
+    background: rgba(0, 128, 87, 0.152);
+    border-left:2px solid green ;
+    padding: 8px 2px 2px 2px;
+    width: 14rem;
+    height: 2rem;
+    color: green;
+    box-shadow: .2px .2px 2px .2px lightgray;
+    animation:showMsg .2s ease;
+    opacity: 1;
+}
+
+@keyframes showMsg{
+0%{
+    opacity: .2;
+}
+100%{
+    opacity: 1;
+}
+}
+
+.data-send-div h3{
+    margin-top: 2px;
+}
+
+
+.send-input-div-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.send-input-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 24%;
+}
+
+.send-input-details{
+    outline: none;
+    border: none;
+    box-shadow: .2px .2px 2px .2px lightgray;
+    padding:4px 2px 4px 8px;
+    width:100%;
+}
+
+.send-input-details:focus{
+    transition: .2s;
+    box-shadow: .2px .2px 3px .2px rgb(0, 132, 255);
+}
+
+.send-details-button{
+    border:2px solid white;
+    color:white;
+    padding:4px 12px 4px 12px;
+    font-family: "Montserrat";
+    background: rgb(0, 115, 223);
+    box-shadow: .2px .2px 3px .2px rgb(3, 107, 204);
+
+}
+
+.send-details-button:hover{
+    background: white;
+    color:rgb(0, 115, 223);
+    cursor: pointer;
+    border:2px solid rgb(0, 115, 223);
+
+}
+
+.employee-detail-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 95%;
+    margin-left: 20px;
+    box-shadow: .2px .2px 5px .2px lightgray;
+    margin-top: 20px;
+    padding:2px 22px 12px 22px;
+    border:2px solid rgb(0, 115, 223);
+
+}
+
+.all-employee-info-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    justify-content: space-around;
+    gap:120px;
+
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 32px;
+}
+
+.update-input-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap:20px;
+
+}
+
+.update-input{
+    outline: none;
+    border: none;
+    box-shadow: .2px .2px 2px .2px lightgray;
+    padding:4px 2px 4px 8px;
+    width:100%;
+
+}
+
+.delete-update-div{
+    display: flex;
+    gap:20px;
+    flex-direction:row ;
+    justify-content: center;
+    align-items: center;
+}
