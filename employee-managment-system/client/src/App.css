@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 .App {
   text-align: center;
 }
@@ -35,4 +36,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.router{
+display: flex;
+flex-direction: row;
+}
+
+.page-links{
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding:5px 2px 5px 2px;
+  border-radius: 4px;
+  padding-bottom:10px;
+  font-family: "Roboto";
+  color: rgb(0, 24, 120);
+
+
+}
+
+.page-links:hover{
+  text-decoration: underline;
+  transition: .2s;
+  background: rgb(0, 102, 210);
+  color: white;
+  padding:2px 12px 5px 12px;
+  box-shadow: .2px .2px 6px .2px rgb(0, 102, 210);
 }

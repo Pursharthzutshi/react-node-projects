@@ -64,13 +64,20 @@ app.post("/send",(req,res)=>{
 
     const sql = `insert into users(name,age,position) values ("${name}","${age}","${position}")`
 
-    db.query(sql,(err,results)=>{
-        if(err){
-            console.log(err);
-        }
-        
-    res.send(results);
-    })
+    if(name === "" || age === "" || position === ""){
+        res.json({message:"Please Fill The Details"})
+    }else{
+        db.query(sql,(err,results)=>{
+            if(err){
+                console.log(err);
+            
+            
+            }
+        res.send(results);
+        })
+    }
+
+
 
 })
 

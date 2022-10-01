@@ -1,0 +1,76 @@
+h3{
+    margin-top: 2px;
+}
+
+.show-msg-div-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.data-send-div,.data-update-div,.data-delete-div{
+    padding: 8px 2px 2px 2px;
+    width: 14rem;
+    height: 2rem;
+    box-shadow: .2px .2px 2px .2px lightgray;
+    animation:showMsg .2s ease;
+    opacity: 1;
+}
+
+.data-send-div{
+    background: rgba(0, 128, 87, 0.152);
+    border-left:2px solid green ;
+    color: green;
+    opacity: 1;
+}
+
+.data-send-div-line,.data-delete-div-line,.data-update-div-line{
+    animation:showSendEffect .6s ease-in;
+    margin-left: 0px;
+    margin-top: -10px;
+    width:95% ;
+    height: .1rem;
+}
+
+.data-send-div-line{
+    background: rgb(0, 128, 90);
+}
+
+.data-delete-div-line{
+    background: red;
+}
+
+.data-update-div-line{
+    background: rgb(0, 64, 128);
+}
+
+
+@keyframes showSendEffect{
+    0%{
+        width:20%;
+    }
+    100%{
+        width:95% ;
+
+    }
+}
+
+.data-delete-div{
+    background: rgba(128, 21, 0, 0.152);
+    border-left:2px solid red ;
+    color: red;
+}
+
+.data-update-div{
+    background: rgba(0, 64, 128, 0.152);
+    border-left:2px solid rgb(0, 64, 128) ;
+    color: rgb(0, 64, 128);
+}
+
+.pleass-fill-up-msg{
+    color:red;
+    background: rgba(255, 0, 0, 0.175);
+    color:red;
+    border:2px solid red;
+}

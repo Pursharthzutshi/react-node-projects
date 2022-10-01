@@ -7,8 +7,14 @@ import "../Employee/Employees.css"
 
 function Employees(){
     
+    const [name,setName] = useState("");
+    const [age,setAge] = useState("");
+    const [position,setPositon] = useState("");
     const [showDetail,setShowDetails] = useState([])
 
+    // const [changePostion,setChangePosition] = useState("");
+
+    // const [id,setId] = useState("")
 
     //Update Values
 
@@ -18,7 +24,15 @@ function Employees(){
 
     const [showUpdatingInputVal,setShowUpdatingInputVal] = useState(false);
 
+    const [dataSendMsg,setDataSendMsg] = useState(false);
 
+  const Post = () =>{
+      axios.post(`http://localhost:3000/send`,{ name:name,age:age,position:position
+}).then((response)=>{
+        console.log(response.data.name);
+    })
+    setDataSendMsg(true)
+}
 
 useEffect(()=>{ 
         axios.get(`http://localhost:3000/get`).then((response)=>{
@@ -42,6 +56,10 @@ const update = (id) =>{
 }
 
 
+    function formSubmit(e){
+        e.preventDefault();
+    }
+
     const showInputVal = () =>{
         setShowUpdatingInputVal(!showUpdatingInputVal)
     }
@@ -50,7 +68,32 @@ const update = (id) =>{
     return(
         <div className="">
 
+<form onSubmit={formSubmit}>
 
+{dataSendMsg && 
+<div className="data-send-div-container">
+<div className="data-send-div">
+    <h3>Data Send</h3>
+    </div>
+</div>
+}
+<br></br>
+
+<div className="send-input-div-container">
+<div className="send-input-div">
+            <input className="send-input-details" placeholder="Name" type="text" onChange={(e)=>{setName(e.target.value)}}/>
+       <br></br>
+            <input className="send-input-details" placeholder="Age" type="text" onChange={(e)=>{setAge(e.target.value)}}/>
+            <br></br>
+       
+            <input className="send-input-details" placeholder="Postion" type="text" onChange={(e)=>{setPositon(e.target.value)}}/>
+</div>
+</div>
+<br></br>
+<button className="send-details-button" onClick={Post} type="submit">Send Details</button>
+
+
+</form>
 
 {
     showDetail.map((data)=>{
