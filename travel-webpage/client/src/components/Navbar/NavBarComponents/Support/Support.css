@@ -1,0 +1,19 @@
+body{
+    padding-bottom: 20px;
+}
+
+.support-section{
+    margin-top: 88px;
+}
+
+.support-section h3{
+    animation: headingEffect .8s ease;
+    color:rgb(1, 84, 120);
+    width: 96%;
+    box-shadow: .2px .2px 12px .2px whitesmoke;
+    padding: 8px 2px 8px 12px;
+    background: white;
+    border-left: 2px solid rgb(1, 84, 120);
+    margin-left: 20px;
+    letter-spacing: 2px;
+}

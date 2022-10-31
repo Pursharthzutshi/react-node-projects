@@ -1,0 +1,64 @@
+.help-type-boxes-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background:white;
+    margin-top: 20px;
+}
+
+.help-type-boxes-div{
+    border: 3px solid rgb(250, 253, 255);
+    padding: 12px 12px 2px 18px;
+    margin-top: 20px;
+    width: 20rem;
+    box-shadow: .2px .2px 22px .2px whitesmoke;
+    animation:showBoxEffect .2s ease;
+    
+}
+
+.help-type-boxes-div:hover{
+    transition: .2s;
+    background:rgb(249, 253, 255);
+}
+
+@keyframes showBoxEffect{
+    to{
+        opacity: .2;
+        transform: translate(12px);
+    }
+    from{
+        
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+.help-type-boxes-div img{
+    width: 4rem;
+    height: auto;
+}
+
+.help-type-boxes-div p{
+    font-size: .8rem;
+    line-height: 22px;
+}
+
+.search-input-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-input-div input{
+    outline: none;
+    width: 50%;
+    border: none;
+    padding:6px 12px 6px 8px;
+    box-shadow: .2px .2px 22px .2px whitesmoke;
+}
+
+.search-input-div input::placeholder{
+    font-family: "Montserrat";
+    font-size: .8rem;
+}

@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    overflow-x: hidden;
+    animation:.7s ease-in showEffect;
+    font-family: "Montserrat";
+
+}
+
+
+::-webkit-scrollbar{
+    background: rgba(6, 127, 213, 0.936);
+    box-shadow: .2px .2px 22px .2px rgba(6, 127, 213, 0.936);
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(0, 67, 115, 0.936);
+    box-shadow: .2px .2px 22px .2px rgba(0, 67, 115, 0.936);
+
+}
+
+.home-section{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.bg-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin-left: 15px;
+    margin-top: 15px;
+    height: 19rem;
+    box-shadow: .2px .2px 12px .2px  rgba(211, 211, 211, 0.321);
+    background: linear-gradient(to left,rgba(0, 149, 255, 0.179),rgba(0, 200, 255, 0.234)),url("../Home/images/pexels-jaime-reimer-2662116 (2).jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* 
+@keyframes showEffect{
+    from{
+        opacity: .8;
+        transform:scale(.95);
+    }
+
+    to{
+        
+        opacity: 1;
+        transform:scale(1);
+    }
+} */
+
+.header-heading-div{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.header-heading-div h1{
+    margin-top: 0px;
+    animation:showEffect infinite 2s;
+}
+
+.logo-image{
+    width: 3rem;
+    height: auto;
+    margin-left: 20px;
+    margin-top: -2px;
+}
+
+
+h1{
+    color:rgba(0, 69, 116, 0.975);
+
+}
+.bg-image h1{
+    color:rgba(0, 69, 116, 0.975);
+
+}
+
+.bg-image p{
+    color:rgba(0, 69, 116, 0.975);
+    font-size: 1.4rem;
+}
+
+.header-all-content{
+    height: 33rem;
+
+}
+
+.header-button-row-div{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.header-button-row-div button{
+    border: none;
+    box-shadow: .2px .2px 12px .2px rgba(211, 211, 211, 0.345);
+    background: linear-gradient(to left,rgba(0, 204, 255, 0.789),rgba(0, 179, 255, 0.849));
+    padding:2px 12px 2px 12px;
+    font-size: 1.1rem;
+    color:white;
+
+}
+/* 
+@keyframes showEffect{
+    0%{
+        margin-left: 20px;
+        opacity: .2;
+    }
+    100%{    
+        
+        margin-left: 30px;
+        opacity: 1;
+    }
+} */
+
+@keyframes showHeaderEffect{
+    for{
+        opacity: .2;
+    }
+}
+
+.service-section{
+    display: flex;
+    flex-direction: column;
+    width: 103%;
+    margin-top: -110px;
+}
+
+.service-section:hover{
+    transition: .2s;
+    transform: rotate(.3deg);
+    background: linear-gradient(to left,rgba(0, 110, 255, 0.055),rgba(0, 200, 255, 0.049));
+}
+
+/* @keyframes showEffect{
+    0%{
+        scale:.2;
+    }
+    100%{
+        scale:1;
+    }
+} */
+
+.service-section h2{
+    margin-top: -80px;
+    text-align:center ;
+    color:rgba(0, 87, 149, 0.841);
+}
+
+
+.service-div{
+    background: linear-gradient(to left,rgba(0, 110, 255, 0.342),rgba(0, 200, 255, 0.353));
+    display: flex;
+    flex-direction:row;
+    gap:100px;
+    justify-content: space-evenly;
+    padding:23px 22px 2px 12px;
+}
+
+.service-col h2{
+    color:rgb(0, 85, 102);
+
+}
+
+.service-col p{
+    line-height: 32px;
+    font-size: 1rem;
+    color:rgb(0, 85, 102);
+}
+
+.service-section-image{
+    width: auto;
+    height: 7rem;
+}
+
+
+.header-search-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-input{
+    padding: 5px 22px 7px 8px;
+    box-shadow: .2px .2px 16px .2px rgba(0, 50, 74, 0.292);
+    outline:none;
+    border: none;
+    width: 20%;
+    font-family: "Montserrat";
+    margin-top: 2px;
+
+}
+
+.header-input::placeholder{
+    color:rgb(0, 66, 136);
+    font-family: "Roboto";
+}
+
+.header-search-button{
+    border: none;
+    margin-top: 2px;
+    padding:2px 12px 2px 12px;
+    background: linear-gradient(to left,rgba(0, 204, 255, 0.877),rgba(0, 179, 255, 0.888));
+    font-family: "roboto";
+}
+
+

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.sign-up-section,.left-side-container,.sign-up-form,.sign-up-form-container{
+    display: flex;
+}
+
+.sign-up-section,.left-side-container,.sign-up-form-container{
+    flex-direction: row;
+}
+
+.right-side-conatiner h2,
+.right-side-conatiner h3{
+    color: white;
+
+}
+
+.sign-up-form{
+    width: 100%;
+    flex-direction: column;
+    gap:40px;
+}
+
+.sign-up-form input{
+    width: 105%;
+    padding:5px 2px 5px 6px;
+    border: none;
+    outline: none;
+    box-shadow: .2px .2px 2px .2px rgb(211, 211, 211);
+}
+
+.circle{
+    filter: blur(2px);
+    border-radius:200px ;
+    z-index: -1;
+    position: absolute;
+    left: 45%;
+    top:59%;
+    width: 15rem;
+    height: 15rem;
+    background: rgb(204, 242, 253);
+    box-shadow: .2px .2px 4px .2px rgb(219, 247, 255);
+    animation:circleEffect 1s infinite;
+}
+
+.circle-two{
+    filter: blur(2px);
+    border-radius:200px ;
+    z-index: -1;
+    position: absolute;
+    left: -5%;
+    top:74%;
+    width: 12rem;
+    height: 12rem;
+    background: rgb(194, 242, 255);
+    box-shadow: .2px .2px 4px .2px rgb(219, 247, 255);
+    animation:circleEffect 5s infinite;
+}
+
+@keyframes circleEffect{
+    from{
+        filter: blur(.2px);
+    }
+    to{
+        filter: blur(2px);
+    }
+}
+
+.sign-up-form input:hover{
+    transition: .2s;
+    
+    transform: scale(1.01);
+    box-shadow: .2px .2px 12px .2px whitesmoke;
+}
+
+.sign-up-form input::placeholder{
+    font-family: "Montserrat";
+}
+
+.sign-up-form button{
+    font-family: "Montserrat";
+    margin-left: 20px;
+    border: none;
+    font-size: .9rem;
+    padding:8px 2px 8px 2px;
+    border-radius: 4px;
+    background: rgb(0, 124, 173);
+    color:white;
+    box-shadow: .2px .2px 12px .2px;
+    border: 1px solid transparent;
+}
+
+.sign-up-form button:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+    transition: .2s;
+    background:white;
+    color:rgba(0, 89, 173, 0.844);
+    border: 1px solid rgba(0, 89, 173, 0.844);
+    box-shadow: .2px .2px 1px .2px rgba(0, 124, 173, 0.958);
+}
+
+.sign-up-section{
+    padding: 2px 2px 2px 52px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+
+.sign-up-section h2{
+    text-align: start;
+    letter-spacing: 2px;
+}
+
+.sign-up-line{
+    width: 10%;
+    height: .2rem;
+    background: rgb(0, 127, 182);
+    animation:showEffect 5s infinite;
+}
+
+@keyframes showEffect{
+    from{
+        width:10%;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+.sign-up-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.left-side-container{
+    width: 100%;
+    justify-content: center;
+
+}
+
+
+.right-side-conatiner{
+    border: 2px solid rgb(0, 127, 182);
+    width: 34%;
+    height: 80vh;
+    border-radius: 8px;
+    box-shadow: .2px .2px 12px .2px rgba(0, 113, 161, 0.749);
+    background: linear-gradient(rgba(0, 113, 161, 0.749),rgba(0, 69, 98, 0.738)),url("images/pexels-jaime-reimer-2662116\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 2px 47px 2px 22px;
+}
+
+.right-side-conatiner h3{
+    margin-left: 0px;
+    line-height: 42px;
+}
+
+.right-side-conatiner p{
+    line-height:32px;
+    color:white;
+    text-align: center;
+}

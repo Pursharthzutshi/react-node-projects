@@ -1,0 +1,72 @@
+const RecommendedDestinationsData = [
+    {
+        id:1,
+        image:"../DestinationComponents/images/pexels-pixabay-532826.jpg",
+        place:"Mountain",
+        type:"HillStations",
+        common:"all",
+        TourDesc:"3 Days 4 Nights 4.5/5 Rating",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:2,
+        image:"",
+        place:"Mountain",
+        type:"HillStations",
+        common:"all",
+        TourDesc:"3 Days 4 Nights 4.5/5 Rating",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:3,
+        image:"",
+        place:"Mountain",
+        type:"HillStations",
+        common:"all",
+        TourDesc:"3 Days 4 Nights 4.5/5 Rating",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:4,
+        image:"",
+        place:"Sea",
+        type:"Beaches",
+        common:"all",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:5,
+        image:"",
+        place:"Sea",
+        type:"Beaches",
+        common:"all",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },    
+    {
+        id:6,
+        image:"",
+        place:"Sea",
+        type:"Beaches",
+        common:"all",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:7,
+        image:"",
+        place:"Paris",
+        type:"Cities",
+        common:"all",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+    {
+        id:8,
+        image:"",
+        place:"Paris",
+        type:"Cities",
+        common:"all",
+        desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum maximus tortor, a convallis orci varius eu. Vivamus commodo ex non pretium tristique. Donec maximus eu nisl et vestibulum. Phasellus blandit nibh sodales, bibendum ipsum in, vehicula quam. ",
+    },
+
+]
+
+export default RecommendedDestinationsData;

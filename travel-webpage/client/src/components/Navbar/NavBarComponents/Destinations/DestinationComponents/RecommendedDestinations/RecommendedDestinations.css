@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.image{
+    margin-top: -2px;
+    margin-left: -12px;
+    width:109%;
+    height: auto;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.recommendations-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+margin-top: -10px;
+}
+
+.recommendations-section-heading{
+    margin-left: 50px;
+    color:rgb(0, 79, 128);
+}
+
+.recommendations-section h3{
+    padding-left: 60px;
+    margin-left: 20px;
+
+}
+
+
+.recommendations-div-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.recommendations-div{
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    margin-top: 20px;
+    padding:2px 12px 22px 12px ;
+    background: linear-gradient(to left,rgb(248, 255, 255),rgb(254, 255, 255));
+    box-shadow: .2px .2px 22px .2px rgb(238, 238, 238);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.recommendations-div:hover{
+    transition: .4s;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.recommendations-div p{
+    font-size: .8rem;
+    line-height:22px;
+    font-family: "Montserrat";
+    margin-top: -4px;
+}
+
+.recommended-tour-package-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.recommended-tour-package-buttons-container button{
+    background: linear-gradient(to left,rgba(0, 117, 200, 0.712),#0089d3a9);
+    border:2px solid rgba(2, 110, 146, 0.937);
+    border-radius: 6px;
+    color: white;
+    font-size: .9rem;
+    padding:4px 12px 4px 12px;
+    margin-left: 20px;
+}
+
+.recommended-tour-package-buttons-container button:hover{
+    background: white;
+    transition: .2s;
+    cursor: pointer;
+    border:2px solid rgb(0, 92, 158);
+    color:rgb(4, 100, 169);
+}
+.our-recommended-buttons-div{
+    display: flex;
+    gap:20px;
+}
+
+.tour-desc-div{
+    height: 1rem;
+    padding: 4px 2px 4px 12px;
+    box-shadow: .2px .2px 2px .2px lightgray;
+    margin-top: 10px;
+    transition: .2s;
+    border-radius: 4px;
+    border: 2px solid rgb(10, 106, 145);
+}
+
+.tour-desc-div:hover{
+    background: rgb(0, 120, 167);
+    color:white;
+}
+
+.tour-desc-div p{
+    font-size: .8rem;
+}
+
+.view-rating-button{
+    font-family: 'Poppins', sans-serif;
+    padding:1px 2px 1px 2px;
+    margin-top: 10px;
+    background: linear-gradient(to left,rgba(95, 190, 222, 0.712),#5ac5f0a9);
+    color:rgb(0, 71, 99);
+    border: 2px solid rgb(9, 127, 174);
+    font-size: .75rem;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.view-rating-button:hover{
+    background: transparent;
+    color:rgb(0, 71, 99);
+    cursor: pointer;
+}
+
+.our-recommended-buttons-div button{
+    font-family: "Roboto";
+    background: linear-gradient(to left,rgba(2, 117, 155, 0.712),#016a93a9);
+    color:white;
+    border:none;
+    border-radius: 2px;
+    padding:4px 12px 4px 12px;
+}
+
+
+.our-recommended-buttons-div button:hover{
+    background: rgba(1, 69, 92, 0.712);
+    transition: .2s;
+    cursor: pointer;
+    border:none;
+    border-radius: 2px;
+    padding:4px 12px 4px 12px;
+}

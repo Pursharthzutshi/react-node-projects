@@ -1,0 +1,89 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:15px 21px 12px 15px;
+    width: 99%;
+    margin-left: -10px;
+    position: fixed;
+    top:0%;
+    background: rgb(163, 235, 255);
+    z-index: +1;
+    box-shadow: .2px .2px 12px .2px rgb(163, 235, 255);
+    border: 2px solid rgb(108, 217, 247);
+    animation:showNavBarEffect 3s infinite;
+}
+
+@keyframes showNavBarEffect{
+    0%{
+        opacity: .8;
+        transform: scale(.99);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nav-logo-heading-div{
+    display: flex;
+    gap:30px;
+}
+
+.nav-logo-heading-div img{
+    width: auto;
+    height: 3rem;
+}
+
+.nav-logo-heading-div h3{
+    margin-top: 5px;
+    color:rgb(0, 67, 106);
+}
+
+.navbar-links-container .links{
+    color:rgb(0, 116, 183);
+    text-decoration:none;
+    font-size: 1.1rem;
+    margin: 7px 2px 2px 22px;
+}
+
+.navbar-links-container .links:hover{
+    text-decoration: underline;
+    text-shadow: 28px 21px 1px rgb(2, 98, 153);
+    transition: .2s;
+    font-size: 1rem;
+}
+
+.navbar-links-container{
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+}
+
+
+.login-sign-up-container{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    height: 1.5rem;
+    margin: 10px 2px 2px 2px;
+}
+
+.login-sign-up-container .links{
+    color: white;
+    background: linear-gradient(to left,rgb(0, 151, 238),rgb(0, 156, 212));
+    border-radius: 2px;
+    font-size: .9rem;
+    padding:2px 12px 2px 12px;
+    box-shadow: .2px .2px 12px .2px rgb(114, 203, 255);
+}
+
+.login-sign-up-container .links:hover{
+    text-decoration: underline;
+}
+
+.login-sign-up-container .links:hover{
+    transition: .2s;
+    background: white;
+    color:rgb(0, 151, 238);
+}
