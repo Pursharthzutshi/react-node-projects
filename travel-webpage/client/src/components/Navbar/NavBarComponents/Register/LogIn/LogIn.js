@@ -4,7 +4,7 @@ import axios from "axios"
 import {Navigate} from "react-router-dom";
 import Home from "../../Home/Home";
 
-function LogIn({changeLogIn,setChangeLogIn,setShowUserAccount}){
+function LogIn({setChangeLogIn,setAccountInfo}){
 
     const [redirect,setRedirect] = useState(false);
 
@@ -19,6 +19,7 @@ function LogIn({changeLogIn,setChangeLogIn,setShowUserAccount}){
     axios.defaults.withCredentials = true;
 
     
+    
 const login = ()  =>{
  
     axios.post(`http://localhost:3002/login`,{emailID:emailID,password:password}).then((response)=>{
@@ -26,29 +27,20 @@ const login = ()  =>{
                 setShowSignUpMsg(false)
                 setRedirect(false)
                 setShowMsg(false)
-                setChangeLogIn(true);
-                setShowUserAccount(false)
+                setChangeLogIn(false);
+                setAccountInfo(false)
 
             }else{
                 setShowSignUpMsg(true)
                 setShowMsg(true)
                 setRedirect(true);
                 setChangeLogIn(true);
-                setShowUserAccount(true)  
+                setAccountInfo(true)  
+                
             }
     })
 }
 
-
-useEffect(()=>{
-    const refreshLogOut = window.localStorage.getItem("setChangeLogOut")
-    setChangeLogIn(JSON.parse(refreshLogOut));
-
-},[])
-
- useEffect(()=>{     
- window.localStorage.setItem("setChangeLogIn",changeLogIn);
-},[changeLogIn])
 
 
 useEffect(()=>{

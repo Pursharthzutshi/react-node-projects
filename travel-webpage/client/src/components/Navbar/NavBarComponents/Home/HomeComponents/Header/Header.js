@@ -1,32 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import logoImage from "../../images/travel.png"
-import {useState} from "react"
+import Flights from "../Header/HeaderComponents/Flights"
+import "../Header/HeaderComponents/HeaderComponents.css"
+import {useState,useEffect} from "react"
 
 function Header(){
-
-    const [showLocation,setShowLocation] = useState([]);
-    const [searchLocationInput,setSearchLocationInput] = useState("");
-
-// const SearchField = () =>
-//     fetch(`https://restcountries.com/v3.1/all`,{mode:"cors"}).then((response)=>{
-//         return response.json()
-//     }).then((data)=>{
-//         console.log(data)
-//         setShowLocation(data)
-//         console.log(searchLocationInput)
-
-//     })
-
-// useEffect(()=>{
-//     fetch(`https://restcountries.com/v3.1/all`,{mode:"cors"}).then((response)=>{
-//         return response.json()
-//     }).then((data)=>{
-//         console.log(data)
-//         setShowLocation(data)
-//         console.log(searchLocationInput)
-
-//     })
-// },[])   
+  
 
     return(
         <div className="header-all-content">
@@ -39,65 +18,12 @@ function Header(){
 <div>
 <marquee><p>Welcome to our travel web page</p></marquee>
 </div>
+<Flights/>
 
-    <br></br>
-    <div className="header-search-div">
-
-        <form>
-            <input type="date" placeholder="from"/>
-
-<select name = "No of People" >
-    <optgroup label="No of people">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-    <option>7</option>
-    </optgroup>
-</select>
-
-
-<input onChange={(e)=>{setSearchLocationInput(e.target.value)}}/>
-
-        </form>
-
-<button className="header-search-button">Search</button>
-</div>
- <select className="search-result-container">
-
- {
-    showLocation.filter((val)=>{
-        
-        if(searchLocationInput === ""){
-            return val
-        }
-
-        if(val.name.common.toLowerCase().includes(searchLocationInput.toLowerCase()) ){
-            return val
-        }
-
-    }).map((val)=>{
-        return(
-            <option>
-            <div className="search-result-div">
-            <p>{val.name.common}</p>
-            <h2>{val.continents}</h2>
-            </div>
-            </option>
-            )
-    })
-}
-</select>
-<div className="">
-
-</div>
-
-</div>
 
 
 
+</div>
 </div>
     )
 }

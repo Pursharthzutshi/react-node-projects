@@ -10,15 +10,35 @@ import LogIn from "./NavBarComponents/Register/LogIn/LogIn";
 import axios from "axios";
 import AccountInfo from "./NavBarComponents/Register/AccountInfo/AccountInfo";
 
-function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
+function Navbar(){
+    const [changeLogIn,setChangeLogIn] = useState(false);
+    const [showUserAccount,setShowUserAccount] = useState(false);
+    
+    useEffect(()=>{
+        const refreshLogOut = localStorage.getItem("setChangeLogIn")
+        const saveAccountInfo = localStorage.getItem("setShowUserAccount");
+
+        setShowUserAccount(JSON.parse(saveAccountInfo));    
+        setChangeLogIn(JSON.parse(refreshLogOut));    
+        console.log("changeLogIn",changeLogIn);
+},[])
+
+ useEffect(()=>{     
+ localStorage.setItem("setChangeLogIn",true);
+ localStorage.setItem("setShowUserAccount",true);
+ 
+},[changeLogIn, setChangeLogIn, showUserAccount])
+
 
     const LogOut = ()  =>{ 
         axios.get(`http://localhost:3002/logout`).then((response)=>{
             console.log(response);
         })
         setChangeLogIn(false)
-        setAccountInfo(false)
+        setShowUserAccount(false)
+        localStorage.getItem("setShowUserAccount");
     }
+
 
     return(
         <nav>
@@ -49,7 +69,7 @@ function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
             
              
         {
-        accountInfo ?<Link className="links" to ="/accountInfo">Account Info</Link>:null
+        showUserAccount ?<Link className="links" to ="/accountInfo">Account Info</Link>:null
         }
             </div>
             </div>
@@ -60,10 +80,10 @@ function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
         <Route path = "/destinations" element = {<Destinations/>}>Destinations</Route>
         <Route path = "/Support" element = {<Support/>}>Support</Route>
 
-        <Route path = "/LogIn" element = {<LogIn changeLogIn={changeLogIn} setChangeLogIn={setChangeLogIn} accountInfo={accountInfo} setAccountInfo={setAccountInfo} />}>{changeLogIn}</Route>
+        <Route path = "/LogIn" element = {<LogIn changeLogIn={changeLogIn} setChangeLogIn={setChangeLogIn} showUserAccount={showUserAccount} setShowUserAccount={setShowUserAccount}/>}>{changeLogIn}</Route>
         <Route path = "/SignUp" element = {<SignUp/>}>Sign Up</Route>
         {
-        accountInfo ? <Route path = "/accountInfo" element = {<AccountInfo/>}>Account info</Route>:null
+        showUserAccount ? <Route path = "/accountInfo" element = {<AccountInfo/>}>Account info</Route>:null
         }
         </Routes>
         
