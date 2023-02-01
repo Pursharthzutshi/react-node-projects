@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../WriteBlog/WriteBlog.css"
 import { Navigate } from "react-router-dom";
+import "../WriteBlog/WriteBlogResponsive.css"
 
 function WriteBlog({showLogInStatus}){
 
@@ -30,7 +31,7 @@ function WriteBlog({showLogInStatus}){
     
  }  
     return(
-        <div className="">
+        <div className="write-blog-section">
 
 {
     navToHomePage &&

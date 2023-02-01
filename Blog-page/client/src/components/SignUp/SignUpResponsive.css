@@ -50,13 +50,28 @@
     @media  only screen and (max-width:508px){
         .container{
             width: 90%;
-            padding-bottom: 10px;
-
+            padding-bottom: 2px;
         }
+
+        .register-button-div button{
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
     } 
-    @media only screen and (max-width:208px){
+    @media only screen and (max-width:408px){
         .container{
-            padding-bottom: 10px;
+            padding-bottom: 40px;
+        }
+
+        .register-form input{
+            box-shadow: .2px .2px 2px .2px lightgray;
+        }    
+    }    
+    @media only screen and (max-width:108px){
+        .container{
+            background: red;
+            padding-bottom: 30px;
         }
     }    
 }
