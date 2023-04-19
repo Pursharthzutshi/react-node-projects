@@ -1,0 +1,70 @@
+.donate-user-info-section,.payment-prices-user-info-container-section,.payment-prices-user-info-container{
+    display: flex;
+}
+
+.donate-user-info-section{
+    flex-direction: row;
+}
+
+.payment-prices-user-info-container-section,.payment-prices-user-info-container{
+    flex-direction: column;
+}
+
+.header-nav{
+    top:0%
+}
+
+.left-sidebar{
+    position: fixed;
+    left: 0%;
+    top:9%;
+    width: 29%;
+    height: 100%;
+    background:linear-gradient(to left,rgba(0, 154, 92, 0.807),rgba(0, 168, 106, 0.73)), url("images/forest.png");
+    background-position: center;
+    background-size: cover;
+    box-shadow: .2px .2px 12px .2px whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:100px;
+    align-items: center;    
+}
+
+
+.left-sidebar h3{
+    
+    color: white;
+
+}
+
+.left-sidebar span{
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: rgb(34, 251, 175);
+}
+
+.left-sidebar p{
+    line-height: 32px;
+    color:white;
+    text-align: center;
+}
+
+.payment-prices-user-info-container-section{
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.payment-prices-user-info-container{
+    gap:80px;
+    width: 53%;
+    margin:22px 2px 2px 0px;    
+    align-items: end;
+    justify-content: center;
+}
+
+.logo-home-button-link{
+    text-decoration: none;
+    color:green;
+}

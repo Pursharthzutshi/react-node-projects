@@ -1,0 +1,59 @@
+
+.work-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-section-inner-container{
+    padding: 2px 2px 20px 40px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.work-section-draggable-div{
+    scroll-behavior: smooth;
+    transition: .2s;
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    margin-top: 20px;
+    overflow: hidden;
+    max-width: 1000px;
+}
+
+.work-section-draggable-div img{
+    width: 18rem;
+}
+
+
+.draggable-image-icons-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:40px;
+    position: relative;
+    width: 7rem;
+  
+}
+
+#left-btn,#right-btn{
+    color:green;
+}
+.icon-btn{
+    background: none;
+    border: none;
+}
+
+ #left-btn{
+    padding-right: 20px;
+    margin-left: -20px;
+    font-size: 3rem;
+}
+
+#right-btn{
+    padding-left: 30px;
+    font-size: 3rem;
+}

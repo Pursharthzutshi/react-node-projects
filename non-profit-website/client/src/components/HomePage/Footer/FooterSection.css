@@ -1,0 +1,101 @@
+.footer-section{
+    color: white;
+    margin-top: 20px;
+    width: 98.7%;
+    height: 32vh;
+    background: rgb(0, 128, 87);
+    padding: 22px 2px 5px 22px;
+    color: rgb(158, 255, 158);
+}
+
+
+.footer-section-container,.footer-links-div,.footer-address-contact-div,.contact-us-div,.contact-us-icon-text-div,.footer-social-media-div,.footer-social-media-icons-div{
+    display: flex;
+}
+
+
+.footer-address-contact-div,.contact-us-icon-text-div,.footer-social-media-div,.footer-social-media-icons-div{
+    flex-direction: row;
+}
+
+.footer-section-container,.footer-links-div,.contact-us-div{
+    flex-direction: column;
+}
+
+.footer-address-contact-div{
+    gap: 170px;
+    justify-content: space-evenly;
+}
+
+.address-div{
+    text-align: start;
+}
+
+.address-div p{
+    line-height: 32px;
+    font-size: .89rem;
+}
+
+.contact-us-div{
+    align-items: start;
+    gap:15px;
+}
+
+.footer-section h3{
+    letter-spacing: 1.2px;
+}
+
+.contact-us-icon-text-div{
+    gap:10px;
+}
+
+
+.contact-us-icon-text-div span{
+    font-size: 1rem;
+}
+
+
+.contact-us-icon{
+    font-size: 1.2rem;
+}
+
+.footer-links-div{
+    gap:10px;
+    margin-top: 0px;
+}
+
+.footer-links{
+    color: rgb(158, 255, 158);
+    text-decoration: none;
+}
+
+
+.footer-links:hover{
+    text-decoration: underline;
+}
+
+.footer-line{
+    box-shadow: .2px .2px 4px .2px lightgreen;
+    margin: 22px 2px 2px -22px;
+    width: 101.5%;
+    height: .1rem;
+    background: white;
+}
+
+.footer-social-media-div{
+    margin-left: -60px;
+    margin-top: 20px;
+    gap:80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social-media-icons-div{
+    color: white;
+
+    gap:20px;
+}
+
+.footer-social-media-icons{
+    font-size: 1.4rem;
+} 

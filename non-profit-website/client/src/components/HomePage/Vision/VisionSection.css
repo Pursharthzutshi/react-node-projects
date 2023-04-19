@@ -1,0 +1,81 @@
+.heading{
+    text-align: center;
+}
+
+.vision-section-container{
+    display: flex;
+}
+
+.vision-section-container{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.vision-section-container{
+    flex-wrap: wrap;
+    
+}
+
+.vision-section-container img{
+    width: 30rem;
+    height: auto;
+    transform: scale(.97);
+    opacity: .8;
+    padding: 2px 2px 2px 0px;
+}
+
+.vision-section-div:hover .vision-section-text-heading-div,.vision-section-div:hover .text,.vision-section-div:hover .vision-section-text-heading-div .heading,.vision-section-div:hover .image{
+    visibility: visible;
+    transform: scale(.99);
+    opacity: 1;
+}
+
+.vision-section-div:hover .vision-section-text-heading-div{
+    background: rgba(0, 128, 0, 0.244);
+    color: white;
+    position: relative;
+    top:1%;
+    left: 0%;
+    opacity: 1;
+    transition: .2s;
+    padding: 2px 2px 2px 2px;
+    animation: .2s ease-in visionSectionImageEffect;
+}
+
+@keyframes visionSectionImageEffect{
+    0%{
+        top:-8%;
+        opacity: 0;
+    }
+
+    100%{
+        top:1%;
+        opacity: 1;
+
+    }
+}
+
+.vision-section-text-heading-div{
+    margin-top: -158px;
+    position: absolute;
+    width: 29.8rem;
+    opacity: .2;
+
+}
+
+.vision-section-div .heading{
+    padding: 2px 2px 2px 12px;
+    visibility: hidden;
+    z-index: +1;
+    text-align: start;
+}
+
+.vision-section-div .text{
+    line-height: 22px;   
+    padding: 2px 2px 2px 12px;
+    visibility: hidden;
+    top:-34%;
+    font-size: .9rem;
+}

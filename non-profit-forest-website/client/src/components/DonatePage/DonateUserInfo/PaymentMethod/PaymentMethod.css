@@ -1,0 +1,135 @@
+
+
+.payment-prices-user-info-container input{
+    text-align: start;
+    margin-top: -30px;
+    margin-left: 20px;
+    height: 1.6vh;
+    gap:20px;
+    padding: 10px 20px 13px 16px;
+    font-size: 1rem;
+    border: .1px solid rgb(0, 107, 73);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: rgba(26, 247, 125, 0.059);
+    box-shadow: .2px .2px 3px .2px lightgray;
+}
+
+.payment-prices-user-info-container input::placeholder{
+    font-family: "Montserrat";
+    font-size: .9rem;
+    letter-spacing: 1.4px;
+
+}
+
+.all-payment-prices-div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap:70px;
+    flex-wrap: wrap;
+} 
+
+
+.all-payment-prices-div-form{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap:70px;
+    flex-wrap: wrap;
+} 
+
+.payment-price-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9%;
+    padding: 2px 2px 2px 2px;
+}
+
+.payment-price-input[value]{
+    color: green;
+    text-align: center;
+}
+
+.payment-price-input:hover{
+    cursor: pointer;
+}
+.payment-price-input:focus{
+    outline: none;
+    /* cursor-blink:none; */
+    cursor: pointer;
+    border: none;
+    background: rgba(26, 247, 125, 0.278);
+    color: green;
+}
+
+
+/* .payment-prices-div-container input{
+    text-align: start;
+    margin-top: -30px;
+    margin-left: 20px;
+    height: 1.6vh;
+    gap:20px;
+    padding: 8px 20px 8px 20px;
+    font-size: 1.22rem;
+    border: none;
+    box-shadow: .2px .2px 12px .2px lightgray;
+    outline: none;
+
+} */
+
+.donate-money-button{
+    margin-top: 20px;
+    width: 20%;
+}
+
+.pay-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -30px;
+    padding-bottom: 20px;
+}
+
+.pay-button{
+    background: rgba(27, 254, 171, 0.278);
+    color: green;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 4px 18px 4px 18px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border: 2px solid rgb(0, 128, 90);
+    box-shadow: .2px .2px .8px .2px rgb(0, 159, 95);
+}
+
+.pay-button:hover{
+    transition: .3s;
+    background: white;
+}
+
+/* .payment-price-input:active{
+    background: white;
+} */
+
+
+.pay-button:hover{
+    background: white;
+    color:green;
+    cursor: pointer;
+}
+
+.error-message{
+    color:red;
+    opacity: 1;
+    transition: .2s;
+}
