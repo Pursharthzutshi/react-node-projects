@@ -8,8 +8,12 @@ body{
     flex-direction: column;
 }
 
+
+
 .blog-page-container{
     padding: 2px 12px 2px 12px;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
 }
 
@@ -21,13 +25,14 @@ body{
 .blog-page-container p{
     line-height: 32px;
     margin-top: 30px;
-    font-size: .9rem;
-    text-align: start;
-    line-height:37px;
+    font-size: 1rem;
+    text-align: center;
+    line-height:44px;
+    
 }
 
 .blog-page-container img{
-    width: 20%;
+    width: 30%;
     height: auto;
     box-shadow: .2px .2px 22px .2px lightgray;
 }

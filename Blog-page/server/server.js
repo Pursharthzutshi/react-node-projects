@@ -203,26 +203,23 @@ app.post("/writeBlogData",(req,res)=>{
 
     if(title === "" || content === ""){
         res.json({ErrorMsg:"Please fill Your Content"});
-        console.log("Please fill Your Content")
     }else if(topic === ""){
         res.json({ErrorMsg:"Please fill The Topic"});
-        console.log("Please fill The Topic")
     }else if(content.length < 300 || content.length < 2000){
         res.json({ErrorMsg:"The Length Should be between 300 and 2000 of your blog content"});
-        console.log("Please fill The Topic")    
     }else if(title.length < 30 || title.length > 150){
+        console.log("Please fill Your Content")
         res.json({ErrorMsg:"The Length Should be between 30 and 150 of your title"});
-        console.log("Please fill The Topic")    
     }
     else{
         db.query(writeBlogData,(err)=>{
             if(err){
                 console.log(err);
             }
+            res.json("Data inserted")
         })
     }
 
-    res.json("Data inserted")
 
 })
 

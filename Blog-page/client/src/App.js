@@ -41,6 +41,9 @@ function App() {
     setShowNavigationMenu(true)
   }
 
+  const hideNavBar = ()=>{
+    setShowNavigationMenu(false)
+  }
   
   axios.defaults.withCredentials = true
     
@@ -61,29 +64,9 @@ function App() {
     <div className="App">
 
       <div className="logo-div">
-        
+  
         <h3>MyBlogs</h3>
         <img className="logo-image" src={LogoImage}/>
-
-  {showNavigationMenu && 
-  <div>
-    <Router>
-    <Link className="res-nav-bar-links" to="/">Home</Link>
-  <Link className="res-nav-bar-links" to="/aboutUs">About Us</Link>
-  {
-    showLogOut?"":<Link className="res-nav-bar-links" to="/writeBlog">Write Blog</Link>
-  }
-  <Link className="res-nav-bar-links" to="/signUp">Sign Up</Link>
- 
-  {showLogOut ?
-  <Link className="res-nav-bar-links" to="/login">LogIn</Link>:
-  <Link onClick={logOut} className="res-nav-bar-links" to="/logout">
-    LogOut
-    </Link>
-    }
-    </Router>
-  </div>
-  }
 
         </div>
 
@@ -93,11 +76,8 @@ function App() {
 
 </div>
 
-
 <Router className="nav-bar-links-container">
-
-<div className="nav-bar">
-  <Link className="nav-bar-links" to="/">Home</Link>
+<Link className="nav-bar-links" to="/">Home</Link>
   <Link className="nav-bar-links" to="/aboutUs">About Us</Link>
   {
     showLogOut?"":<Link className="nav-bar-links" to="/writeBlog">Write Blog</Link>
@@ -110,6 +90,35 @@ function App() {
     LogOut
     </Link>
     }
+
+<div className='res-nav-bar-links-div-container'>
+
+{
+showNavigationMenu &&
+<div onClick={hideNavBar} className='res-nav-bar-links-div'>
+  <p>Navigation bar</p>
+
+<Link  className="res-nav-bar-links" to="/">Home</Link>
+  <Link className="res-nav-bar-links" to="/aboutUs">About Us</Link>
+  {
+    showLogOut?"":<Link className="res-nav-bar-links" to="/writeBlog">Write Blog</Link>
+  }
+  <Link className="res-nav-bar-links" to="/signUp">Sign Up</Link>
+ 
+  {showLogOut ?
+  <Link className='res-nav-bar-links' to="/login">LogIn</Link>:
+  <Link onClick={logOut} className='nav-bar-links' to="/logout">
+    LogOut
+    </Link>
+    }
+    <button onClick={hideNavBar}>Close</button>
+
+</div>
+
+}
+</div>
+<div className="nav-bar">
+  
    <Routes>
     <Route path="/" element={<Home showLogInStatus={showLogInStatus} showWelcomeBackMsg={showWelcomeBackMsg} blogNo={blogNo} setsBlogNo = {setBlogNo}/>}></Route>
     <Route path = "/writeBlog" element = {<WriteBlog showLogInStatus={showLogInStatus}/>}></Route> 
@@ -117,11 +126,11 @@ function App() {
     <Route path = "/blog/" element = {<BlogPage blogNo = {blogNo}/>} ></Route>
     <Route path = "/signUp" element = {<SignUp/>}></Route>
     <Route path = "/login" element={<LogIn setShowWelcomeBackMsg={setShowWelcomeBackMsg} showLogOut={showLogOut} setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus} setShowLogOut={setShowLogOut} setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
-
     <Route path = "/logout" element={<LogIn setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus} setShowLogOut={setShowLogOut} setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
-
   </Routes>
   </div>
+
+
 </Router>
 
     </div>

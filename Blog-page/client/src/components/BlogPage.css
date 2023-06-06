@@ -47,6 +47,9 @@
     height: 2rem;
 }
 
+.res-nav-bar-links{
+    visibility: hidden;
+}
 
 .nav-bar-links:hover{
     border:2px dotted  rgb(0, 68, 66);
@@ -73,9 +76,7 @@
 
 .welcome-back-msg{
     width: 20%;
-    border: 1px dashed rgb(0, 150, 148);
     border-radius: 8px;
     color:rgb(0, 150, 148);
     padding: 12px 2px 12px 2px;
-    box-shadow: .2px .2px 2px .2px lightgray;
 }

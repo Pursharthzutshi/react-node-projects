@@ -18,11 +18,34 @@
         height: 2rem;
     }
 
-    .res-nav-bar-links{
-        visibility:visible;
+    .res-nav-bar-links-div-container{
+        display: flex;
+        justify-content: center;
     }
 
+    .res-nav-bar-links-div{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:20px;
+        margin-top: -20px;
+        z-index: +1;
+        background: white;
+        padding: 2px 2px 17px 2px;
+        width: 60%;
+        box-shadow: .2px .2px 12px .2px lightgray;
+    }
+
+    .res-nav-bar-links{
+        text-decoration: none;
+        color:darkgreen;
+        visibility: visible;
+    }
+
+
     .nav-bar-links{
+        display:none;
     }
 
     .links{
