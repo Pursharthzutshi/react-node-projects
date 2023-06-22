@@ -26,9 +26,6 @@ app.use("/Registration",Registration)
 app.use("/FetchOrders",FetchOrders)
 app.use("/InsertPaymentDetails",InsertPaymentDetails)
 
-app.get("/yo",(req,res)=>{
-    res.send("Yo")
-})
 
 
 app.listen(port,()=>{

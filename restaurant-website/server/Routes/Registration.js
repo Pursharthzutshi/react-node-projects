@@ -84,7 +84,7 @@ router.post("/login",(req,res)=>{
         if(err){
             console.log(err)
         }
-        if(arrayResult.length > 0){
+        if(arrayResult.length>0){
             req.session.user = arrayResult
             console.log(req.session)
             res.json({data:arrayResult})

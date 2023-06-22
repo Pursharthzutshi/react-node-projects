@@ -54,6 +54,7 @@ useEffect(()=>{
     axios.get(`http://localhost:3001/Registration/login`).then((response) => {
       if (response.data.loggedIn === true) {
         setShowUserLoggedIn(true);
+
       } else {
         setShowUserLoggedIn(false);
       }

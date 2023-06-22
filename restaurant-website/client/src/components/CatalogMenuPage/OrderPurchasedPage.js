@@ -16,7 +16,7 @@ function OrderPurchasedPage({orderLoggedInEmailID}){
         setOrderPurchasedEmailID(emailID)
         console.log(orderPurchasedEmailID)
 
-        axios.post(`https://food-ordering-web-application-one.vercel.app/FetchOrders/fetchOrderPurchasedData`,{orderPurchasedEmailID:orderPurchasedEmailID}).then((res)=>{
+        axios.post(`http://localhost:3001/FetchOrders/fetchOrderPurchasedData`,{orderPurchasedEmailID:orderPurchasedEmailID}).then((res)=>{
 console.log(res.data)
             if(res.data.data){
                 setShowOrder(true);
