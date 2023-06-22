@@ -45,10 +45,8 @@ app.get("/logout",(req,res)=>{
         const loginQuery = `select id from register where emailId = ? and password = ?`
     
         if(emailID && password){
-
             
             db.query(loginQuery,[emailID,password],(err,results)=>{
-
 
                 if(err){
                     console.log(err)

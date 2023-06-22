@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.flights-results-div,.flight-results-container{
+    display: flex;
+}
+
+.flights-results-div{
+    flex-direction:row ;
+}
+
+.flight-results-container{
+    flex-direction: column;
+}
+
+.search-flights-results{
+    padding-top: 100px;
+}
+
+.flights{
+    font-size: 4rem;
+}
+
+.flights-results-div{
+    margin-top: 20px;
+    padding:20px 2px 20px 2px;
+    justify-content: space-around;
+    box-shadow: .2px .2px 22px .2px whitesmoke;
+}
+/* 
+.flights-results-div:hover{
+    box-shadow: none;
+    transition: .4s;
+} */
+
+.flight-number{
+    font-size: .7rem;
+    color:rgb(88, 88, 88);
+}
+
+.flights-results-div span{
+   font-family: "Roboto"; 
+    font-size: .97rem;
+}
+.flights-results-div p{
+    font-size: 1rem;
+}
+
+.flight-stop{
+    color:rgb(0, 101, 137);
+}
+
+
+.flight-image{
+    padding:12px 12px 12px 12px;
+    border-radius: 200px;
+    margin-top: 7px;
+    width: 3rem;
+    height:auto;
+}
+
+.flights-results-div button{
+    margin-top: 25px;
+    font-size: .85rem;
+    padding: 5px 18px 5px 18px;
+    border: none;
+    box-shadow: .2px .2px 12px .2px whitesmoke;
+    font-family: "Montserrat";
+    background: rgba(6, 127, 213, 0.936);
+    color: white;
+    border-radius: 200px;
+}

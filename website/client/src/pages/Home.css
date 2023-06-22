@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: "Montserrat";
+}
+
+h3{
+    font-family:"Roboto" ;
+}
+
+.navbar,.left-side-nav,.right-side-nav,header,.service-section-container,.testimonials-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us-container{
+    display: flex;
+    flex-direction: column;
+}

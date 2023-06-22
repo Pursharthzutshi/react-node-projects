@@ -100,3 +100,10 @@
     color: rgb(0, 87, 111);
     box-shadow: .2px .2px 3px .2px rgb(167, 236, 255);
 }
+
+
+.from-to-list-div{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}

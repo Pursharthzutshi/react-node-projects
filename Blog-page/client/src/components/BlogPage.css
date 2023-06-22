@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-.navbar-container{
+.navbar-container,.nav-bar-links-container{
     display: flex;
 }
-
 .app{
     display: flex;
     flex-direction: column;
@@ -30,6 +29,7 @@
 }
 
 .nav-bar-links-container{
+    background: red;
     width: 100%;
     height: 2rem;
     font-family: "Ubuntu";
@@ -80,3 +80,4 @@
     color:rgb(0, 150, 148);
     padding: 12px 2px 12px 2px;
 }
+

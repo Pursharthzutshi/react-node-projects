@@ -1,0 +1,24 @@
+.testimonials-section{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 30rem;
+    color: white;
+    background: black;
+}
+
+
+.testimonials-section button{
+    background: black;
+    color:white;
+    box-shadow: .2px .2px 2px .2px black;
+    padding:4px 12px 4px 12px;
+    font-size: 1rem;
+}
+
+.testimonials-section button:hover{
+    transition: .2s;
+    background: white;
+    color:black;
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import logoImage from "../../images/travel.png"
-import Flights from "../Header/HeaderComponents/Flights"
 import "../Header/HeaderComponents/HeaderComponents.css"
-import {useState,useEffect} from "react"
+import {Link, Outlet } from "react-router-dom";
+
 
 function Header(){
   
@@ -18,9 +18,14 @@ function Header(){
 <div>
 <marquee><p>Welcome to our travel web page</p></marquee>
 </div>
-<Flights/>
+<nav>
 
+<Link className="links" to ="/flights">Flights</Link>    
 
+</nav>
+
+<Outlet/>
+            
 
 
 </div>

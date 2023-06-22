@@ -6,13 +6,13 @@ import Footer from "./HomeComponents/Footer/Footer";
 import About from "./HomeComponents/About/About";
 
 
-function Home(){
+function Home({showMsg}){
 
 
     return(
 
         <div>
-         
+{showMsg}         
         <div className="home-section">
     
 <Header/>

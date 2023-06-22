@@ -9,8 +9,11 @@ import SignUp from "./NavBarComponents/Register/SignUp/SignUp";
 import LogIn from "./NavBarComponents/Register/LogIn/LogIn";
 import axios from "axios";
 import AccountInfo from "./NavBarComponents/Register/AccountInfo/AccountInfo";
+import Flights from "./NavBarComponents/Home/HomeComponents/Header/HeaderComponents/Flights";
+import SearchFlightsResults from "../Navbar/SearchFlightsResults/SearchFlightsResults"
 
 function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
+
 
     const LogOut = ()  =>{ 
         axios.get(`http://localhost:3002/logout`).then((response)=>{
@@ -46,8 +49,8 @@ function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
             </Link>    
 
             <Link className="links" to ="/SignUp">SignUp</Link>    
-            
-             
+          
+
         {
         accountInfo ?<Link className="links" to ="/accountInfo">Account Info</Link>:null
         }
@@ -56,7 +59,7 @@ function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
             
             <Routes>
             
-        <Route index element = {<Home showMsg = {true}/>}>Home</Route>
+        <Route path="/" element = {<Home showMsg = {true}/>}>Home</Route>
         <Route path = "/destinations" element = {<Destinations/>}>Destinations</Route>
         <Route path = "/Support" element = {<Support/>}>Support</Route>
 
@@ -65,6 +68,11 @@ function Navbar({changeLogIn,setChangeLogIn,accountInfo,setAccountInfo}){
         {
         accountInfo ? <Route path = "/accountInfo" element = {<AccountInfo/>}>Account info</Route>:null
         }
+        
+        <Route path = "/flights" element = {<Flights/>}>Flights</Route>
+
+        <Route path = "/searchFlightsResults" element = {<SearchFlightsResults/>}>searchFlightsResult</Route>
+
         </Routes>
         
             </nav>

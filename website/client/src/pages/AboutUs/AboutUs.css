@@ -1,0 +1,23 @@
+.about-us-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0.815),rgba(255, 255, 255, 0.881)),url("images/settings.png");
+    background-position: center;
+
+}
+
+.about-us-box{
+    border: 2px double black;
+    width: 52rem;
+    height: 8rem;
+}
+
+.about-us-box img{
+    transform: skew(20deg);
+    margin-top: 5px;
+    width: 3rem;
+    height: auto;
+}

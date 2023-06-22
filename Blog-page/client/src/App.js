@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router,Routes,Link, Route} from 'react-router-dom';
+import { BrowserRouter as Router,Routes,Link, Route, Navigate} from 'react-router-dom';
 import Home from './components/Home/Home';
 import WriteBlog from './components/WriteBlog/WriteBlog';
 import "../src/components/BlogPage.css"
@@ -11,29 +11,41 @@ import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import axios from 'axios';
 import "./AppResponsive.css"
-
+import UserProfile from "../src/components/UserProfile/UserProfile"
 function App() {
 
   const [blogNo,setBlogNo] = useState("")
   const [showLogInStatus,setShowLogInStatus] = useState("")
-  const [showLogOut,setShowLogOut] = useState(true)
+  // const [showLogOut,setShowLogOut] = useState(true)
 
-  const [logOutButton,setLogOutButton] = useState(false);
+  const [loggedInEmailId,setLoggedInEmailId] = useState("");
 
   const [navToHomePage,setNavToHomePage] = useState(false);
 
   const [showWelcomeBackMsg,setShowWelcomeBackMsg] = useState(false);
 
-  const [showNavButton,setShowNavButton] = useState(false);
-
   const [showNavigationMenu,setShowNavigationMenu] = useState(false);
+
+  const [logOutButton,setLogOutButton] = useState(false);
+
+  useEffect(()=>{
+    const userLoginState = JSON.parse(localStorage.getItem("setLogOutButton"))
+    setLogOutButton(userLoginState)
+
+  },[logOutButton])
+
+
+//   useEffect(()=>{
+//   setLoggedInEmailId(response.data[0].EmailId)
+// })
 
   const logOut = ()=>{
     axios.get(`http://localhost:3001/logout`).then((response)=>{
       console.log(response);
-      setShowLogOut(true)
-      localStorage.removeItem("showLogOut")
       setNavToHomePage(true)
+      setLogOutButton(false)
+      setLoggedInEmailId("")
+      localStorage.setItem("setLogOutButton","false")
     })
   }
 
@@ -48,13 +60,16 @@ function App() {
   axios.defaults.withCredentials = true
     
   useEffect(()=>{
-        
+        // localStorage.setItem("showLogOut",true)
     axios.get(`http://localhost:3001/logInUsers`).then((res)=>{
+      console.log(res.data.user[0].EmailId)
         if(res.data.loggedIn === true){
             setShowLogInStatus(res.data.user[0].name)
             setShowWelcomeBackMsg(true)
+            setLoggedInEmailId(res.data.user[0].EmailId)
         }else{
           setShowLogInStatus("")
+          // setLoggedInEmailId("")
         }   
 
     })
@@ -64,11 +79,11 @@ function App() {
     <div className="App">
 
       <div className="logo-div">
-  
+
         <h3>MyBlogs</h3>
         <img className="logo-image" src={LogoImage}/>
-
         </div>
+      {loggedInEmailId}
 
 <div className='nav-button-div'>
 
@@ -77,56 +92,46 @@ function App() {
 </div>
 
 <Router className="nav-bar-links-container">
+  <div>
 <Link className="nav-bar-links" to="/">Home</Link>
   <Link className="nav-bar-links" to="/aboutUs">About Us</Link>
-  {
-    showLogOut?"":<Link className="nav-bar-links" to="/writeBlog">Write Blog</Link>
-  }
+
+
   <Link className="nav-bar-links" to="/signUp">Sign Up</Link>
- 
-  {showLogOut ?
-  <Link className='nav-bar-links' to="/login">LogIn</Link>:
-  <Link onClick={logOut} className='nav-bar-links' to="/logout">
-    LogOut
-    </Link>
-    }
-
-<div className='res-nav-bar-links-div-container'>
-
-{
-showNavigationMenu &&
-<div onClick={hideNavBar} className='res-nav-bar-links-div'>
-  <p>Navigation bar</p>
-
-<Link  className="res-nav-bar-links" to="/">Home</Link>
-  <Link className="res-nav-bar-links" to="/aboutUs">About Us</Link>
+  </div>
+  <br></br>
+  <div className='log-out-div'>
   {
-    showLogOut?"":<Link className="res-nav-bar-links" to="/writeBlog">Write Blog</Link>
+  logOutButton ?
+  <div>
+<Link className="nav-bar-links" to="/writeBlog">Write Blog</Link>
+
+<Link  className='nav-bar-links' to="/myProfile"> My Profile</Link>
+
+<Link onClick={logOut} className='nav-bar-links' to="/logout"> LogOut</Link>
+
+</div>
+
+:
+    <Link className='nav-bar-links' to="/login">LogIn</Link>
+
   }
-  <Link className="res-nav-bar-links" to="/signUp">Sign Up</Link>
- 
-  {showLogOut ?
-  <Link className='res-nav-bar-links' to="/login">LogIn</Link>:
-  <Link onClick={logOut} className='nav-bar-links' to="/logout">
-    LogOut
-    </Link>
-    }
-    <button onClick={hideNavBar}>Close</button>
+    </div>
 
-</div>
 
-}
-</div>
 <div className="nav-bar">
   
    <Routes>
     <Route path="/" element={<Home showLogInStatus={showLogInStatus} showWelcomeBackMsg={showWelcomeBackMsg} blogNo={blogNo} setsBlogNo = {setBlogNo}/>}></Route>
+
     <Route path = "/writeBlog" element = {<WriteBlog showLogInStatus={showLogInStatus}/>}></Route> 
+    <Route path = "/myProfile" element={<UserProfile loggedInEmailId={loggedInEmailId}/>}></Route>
+
     <Route path = "/aboutUs" element = {<AboutUs/>}></Route>
     <Route path = "/blog/" element = {<BlogPage blogNo = {blogNo}/>} ></Route>
     <Route path = "/signUp" element = {<SignUp/>}></Route>
-    <Route path = "/login" element={<LogIn setShowWelcomeBackMsg={setShowWelcomeBackMsg} showLogOut={showLogOut} setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus} setShowLogOut={setShowLogOut} setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
-    <Route path = "/logout" element={<LogIn setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus} setShowLogOut={setShowLogOut} setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
+    <Route path = "/login" element={<LogIn setShowWelcomeBackMsg={setShowWelcomeBackMsg}  setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus}  setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
+    <Route path = "/logout" element={<LogIn setLogOutButton={setLogOutButton} showLogInStatus={showLogInStatus} setShowLogInStatus = {setShowLogInStatus}/>}></Route>:
   </Routes>
   </div>
 

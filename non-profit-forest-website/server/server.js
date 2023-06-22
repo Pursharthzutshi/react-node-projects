@@ -12,8 +12,6 @@ app.use(express.json());
 
 app.use("/payment",Payment)
 
-
-
 app.listen(port,()=>{
     console.log(`${port} is running`)
 })

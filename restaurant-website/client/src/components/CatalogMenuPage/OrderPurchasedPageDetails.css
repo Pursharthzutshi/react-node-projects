@@ -1,0 +1,24 @@
+.item-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.item-name-div,.item-quantity-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-purchased-page-details-page{
+    display: flex;
+    flex-direction: row;
+    gap:60px;
+}
+
+.orders-details-heading-div,.order-details-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-details-div{
+    gap:18px;
+}

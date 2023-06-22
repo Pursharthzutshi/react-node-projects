@@ -22,7 +22,7 @@ app.use(session({
     resave:true,
     saveUninitialized:false,
     cookie:{
-        expires:60 * 30 * 30
+        expires:null
     }    
 }))
 
@@ -70,6 +70,21 @@ app.get("/insert",(req,res)=>{
             console.log(err)
         }
         res.send("Data inserted")
+    })
+})
+
+app.post("/myProfileFetch",(req,res)=>{
+
+    const emailId = req.body.loggedInEmailId
+
+    const myProfileFetchQuery = `select * from userssignup where EmailId = ?`
+
+    db.query(myProfileFetchQuery,[emailId],(err,array)=>{
+        console.log(array)
+        if(err){
+            console.log(err);
+        }
+        res.json({ProfileData:array})
     })
 })
 

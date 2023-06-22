@@ -1,0 +1,50 @@
+header{
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+.left-side-header p{
+    text-align: start;
+    line-height: 30px;
+}
+
+.right-side-header img{
+    width: 12rem;
+    height: auto;
+}
+
+header .buttons-container{
+    display: flex;
+    justify-content: center;
+    gap:80px;
+}
+
+header .buttons-container button{
+    color:white;
+    border-radius: 4px;
+    font-size: .9rem;
+    padding:5px 12px 5px 12px;
+    background: black;
+}
+
+header .buttons-container button:hover{
+    background:white;
+    color: black;
+    transition: .2s;
+    cursor: pointer;
+}
+
+
+.circle{
+
+    opacity: .2;
+    position: relative;
+    top:-20%;
+    bottom: 10%;
+    left: -10%;
+    right:0%;
+    width: 10rem;
+    height: 10rem;
+    background: black;
+    border-radius: 200px;
+}

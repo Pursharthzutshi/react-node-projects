@@ -1,0 +1,11 @@
+.right-side-nav{
+    gap:20px;
+}
+
+.navbar{
+    padding: 2px 22px 2px 18px;
+    justify-content: space-between;
+    background: black;
+    color: white;
+
+}

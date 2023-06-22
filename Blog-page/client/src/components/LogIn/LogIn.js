@@ -5,7 +5,7 @@ import "../register.css"
 import "./LogIn.css"
 import "./LogInResponsive.css"
 
-function LogIn({setShowLogInStatus,setShowLogOut,showLogInStatus,setLogOutButton,setShowWelcomeBackMsg}){
+function LogIn({showLogInStatus,setLogOutButton,setShowWelcomeBackMsg,loggedInEmailId,setLoggedInEmailId}){
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -18,23 +18,25 @@ function LogIn({setShowLogInStatus,setShowLogOut,showLogInStatus,setLogOutButton
 
     const logInUsers = ()=>{
         axios.post(`http://localhost:3001/logInUsers`,{email:email,password:password}).then((response)=>{                    
-        if(response.data[0].name){
-            setShowLogOut(true)
-            setRedirectHomePage(true)
-            setShowLogOut(false)
-            setShowWelcomeBackMsg(true)
-
-        }else if(response.data.message){
+        if(response.data.message){
+            setLogOutButton(false)
+            localStorage.setItem("setLogOutButton","false")
             setShowLoginErrorStatus(response.data.message)
             setRedirectHomePage(false) 
             setShowWelcomeBackMsg(false)
+            // setLoggedInEmailId("")
+        }else{
+
+            setLogOutButton(true)
+            localStorage.setItem("setLogOutButton","true")
+            setRedirectHomePage(true)
+            setShowWelcomeBackMsg(true)
+            // setLoggedInEmailId(response.data[0].EmailId)
+            console.log(response.data[0].EmailId)
+            
         }
         }) 
     }
-    useEffect(()=>{
-        localStorage.setItem("showLogOut",setShowLogOut(JSON.stringify(true)))
-        JSON.stringify(localStorage.getItem("showLogOut"))
-      },[setShowLogOut])
           
 
     return(
