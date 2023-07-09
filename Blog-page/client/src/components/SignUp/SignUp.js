@@ -4,8 +4,9 @@ import { useState } from "react";
 import "./SignUp.css"
 import "./SignUpResponsive.css"
 import SignUpIcon from "./images/sign-up-icon.png"
+import { Navigate } from "react-router-dom";
 
-function SignUp(){
+function SignUp({signUpErrorMsg,setSignUpErrorMsg}){
 
     const [name,setName] = useState("")
     const [email,setEmail] = useState("")
@@ -13,20 +14,22 @@ function SignUp(){
     const [reCheckPassword,setReCheckPassword] = useState("")
 
     const [showSignUpStatus,setShowSignUpStatus] = useState("");
-    
-    const [signUpErrorMsg,setSignUpErrorMsg] = useState(true)
 
+    const [redirectHomePage,setRedirectHomePage] = useState(false)
 
     const sendSignUpDetails = () =>{
         axios.post("http://localhost:3001/SignUpDataInsert",{name:name,email:email,password:password,reCheckPassword:reCheckPassword}).then((response)=>{
-            if(response.data.message){
+        console.log(name)  
+        if(response.data.message){
                 console.log(response)
                 setShowSignUpStatus(response.data.message)
                 setSignUpErrorMsg(true)
+                setRedirectHomePage(false)
             }else if(response){
                 setSignUpErrorMsg(false)
                 console.log(response)
                 console.log("Successful")
+                setRedirectHomePage(true)
             }
         })
     }
@@ -38,6 +41,9 @@ function SignUp(){
     return(
 
         <div className="sign-up-section">
+           {
+            redirectHomePage && <Navigate to ="/"/>
+           }
         
         <div className="register-form-container">
       
@@ -59,7 +65,7 @@ function SignUp(){
             </div>
             <p >
                 
-                {signUpErrorMsg ? <p style={{background:""}} className="sign-up-error-message">{showSignUpStatus}</p>
+                {signUpErrorMsg ? <p className="sign-up-error-message">{showSignUpStatus}</p>
                 :<p className="signed-up-msg">Signed Up</p>}
                 
                 </p>

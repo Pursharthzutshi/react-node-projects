@@ -1,0 +1,10 @@
+
+    // const data = userSignUpTable.aggregate([{
+    //     $lookup: {
+    //     From:usersBlogsDataTable,
+    //     LocalField: _id,
+    //     foreignField:_id,
+    //     as: result
+    //     }}]);
+
+        // _id:userSignUpTable.find({Emailid:email})

@@ -8,10 +8,8 @@ import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom"
 import BlogPage from "./BlogPage/BlogPage";
 import "./HomeResponsive.css"
 
-function Home({blogNo,setsBlogNo,showWelcomeBackMsg,showLogInStatus}){
+function Home({blogNo,setsBlogNo,showWelcomeBackMsg,showLogInStatus,showBlogData,setShowBlogData,showBlogContent}){
 
-    const [data,setData] = useState([])
-    const [showData,setShowData]  = useState([])
     const [searchBlog,setSearchBlog] = useState("")
     const [showAllBlogContent,setShowAllBlogContent] = useState(true);
 
@@ -27,33 +25,24 @@ function Home({blogNo,setsBlogNo,showWelcomeBackMsg,showLogInStatus}){
 
     const testTwo = (category)=>(value) => {
             
-             if(value.target.checked){
-                const filteredItem = data.filter((val)=>{
-                    return val.topic  === category;  
-                })
-                setData(filteredItem)  
-               }else if(!value.target.checked){
+            //  if(value.target.checked){
+            //     const filteredItem = data.filter((val)=>{
+            //         return val.topic  === category;  
+            //     })
+            //     setData(filteredItem)  
+            //    }else if(!value.target.checked){
                 
-             }
+            //  }
     }
 
 
    useEffect(()=>{
     axios.get(`http://localhost:3001/fetch`).then((res)=>{
-        setData(res.data)
+        setShowBlogData(res.data.data)
+        console.log(res.data.data)
     })
-   },[])
+   },[setShowBlogData])
 
-const showBlogContent = (item) =>{
-    axios.get(`http://localhost:3001/fetch/${item}`).then((res)=>{
-        if(res){
-            setShowData(res.data)
-            setsBlogNo(item)
-            localStorage.setItem("SaveBlogNo",item)    
-        }
-        console.log(res.data)
-    })
-}  
 
     return(
 
@@ -85,7 +74,7 @@ showWelcomeBackMsg &&
         <div className="home-page-boxes-blog-container">
             <div className="blog-box-container">
             {
-            data.filter((val)=>{
+            showBlogData.filter((val)=>{
                 if(searchBlog === ""){
                     return val
                 }else if(val.title.toLowerCase().includes(searchBlog.toLowerCase())){
@@ -104,7 +93,7 @@ showWelcomeBackMsg &&
 <p></p>
 {/* <button onClick={showDate}>Show Date</button> */}
 <Link to="/blog">
-<button  onClick={()=>{showBlogContent(val.id)}}>View Blog</button>
+<button  onClick={()=>{showBlogContent(val._id)}}>View Blog</button>
 </Link>
 
 

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "../WriteBlog/WriteBlog.css"
 import { Navigate } from "react-router-dom";
 import "../WriteBlog/WriteBlogResponsive.css"
 
-function WriteBlog({showLogInStatus}){
+function WriteBlog({showLogInStatus,loggedInEmailId}){
 
     const [title,setTitle] = useState("")
     const [topic,setTopic] = useState("")
@@ -15,8 +15,15 @@ function WriteBlog({showLogInStatus}){
 
     const [showErrorMsg,setShowErrorMsg] = useState("")
 
+    useEffect(()=>{
+        console.log(loggedInEmailId)
+        console.log(showLogInStatus)
+
+    },[loggedInEmailId, showLogInStatus])
+
  const sendBlogData = () =>{
-    axios.post(`http://localhost:3001/writeBlogData`,{title:title,topic:topic,content:content,showLogInStatus:showLogInStatus}).then((res)=>{
+    console.log(loggedInEmailId)
+    axios.post(`http://localhost:3001/writeBlogData`,{loggedInEmailId:loggedInEmailId,title:title,topic:topic,content:content,showLogInStatus:showLogInStatus}).then((res)=>{
         console.log(res);
         if(res.data.ErrorMsg){
             setShowErrorMsg(res.data.ErrorMsg)

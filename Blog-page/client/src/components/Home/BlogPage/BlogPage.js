@@ -7,13 +7,20 @@ function BlogPage({blogNo}){
 
     const [showIndividualBlogData,setShowIndividualBlogData] = useState([])
 
-    useEffect(()=>{
+    const [blogNoId,setBlogNoId] = useState("")
+
+    // useEffect(()=>{
+    //     const savedIndividualBlogPostId = localStorage.getItem("SaveBlogNo")
         
-        const savedBlogNo = localStorage.getItem("SaveBlogNo")
+    //     setBlogNoId(savedIndividualBlogPostId)
+    //     console.log(blogNoId)
 
+    // },[blogNoId])
 
-        axios.get(`http://localhost:3001/fetch/${savedBlogNo}`).then((res)=>{
-            console.log(blogNo);
+    useEffect(()=>{
+        console.log(blogNo)
+        axios.get(`http://localhost:3001/fetch/${blogNo}`).then((res)=>{
+            console.log(res.data);
             setShowIndividualBlogData(res.data)
         })
 

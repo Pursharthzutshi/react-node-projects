@@ -32,7 +32,7 @@ function LogIn({showLogInStatus,setLogOutButton,setShowWelcomeBackMsg,loggedInEm
             setRedirectHomePage(true)
             setShowWelcomeBackMsg(true)
             // setLoggedInEmailId(response.data[0].EmailId)
-            console.log(response.data[0].EmailId)
+            console.log(response.data[0].Emailid)
             
         }
         }) 
